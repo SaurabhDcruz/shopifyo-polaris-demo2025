@@ -15,6 +15,8 @@ function LayoutStructure () {
   const tabs = [
     'home',
     'action',
+    'button',
+    'btngrp',
     'dynamic-pricing',
     'building-blocks',
     'shopify-discount-codes',
@@ -52,14 +54,13 @@ function LayoutStructure () {
       <Navigation.Section
         items={[
           {
-            excludePaths: ['#'],
             label: 'Home',
             icon: HomeIcon,
             onClick: () => handleNavItemClick('home', 'home'),
             selected: activeSettingsPage === 'home'
           },
           {
-            excludePaths: ['#'],
+            url:'/',
             label: 'Actions',
             icon: OrderIcon,
             onClick: () => handleNavItemClick('action', 'action'),
@@ -67,16 +68,18 @@ function LayoutStructure () {
             selected: activeSettingsPage === 'action',
             subNavigationItems: [
               {
-                url: '#',
-                excludePaths: ['#'],
+                url: '/',
                 disabled: false,
-                label: 'Collections'
+                matches:activeSettingsPage === 'button',
+                label: 'Button',
+                onClick: () => handleNavItemClick('button', 'button'),
               },
               {
-                url: '#',
-                excludePaths: ['#'],
+                url: '/',
                 disabled: false,
-                label: 'Inventory'
+                matches:activeSettingsPage === 'btngrp',
+                label: 'Button Groups',
+                onClick: () => handleNavItemClick('btngrp', 'btngrp'),
               }
             ]
           },
@@ -116,7 +119,7 @@ function LayoutStructure () {
               {
                 url: '#',
                 disabled: false,
-                label: 'Inventory'
+                label: 'btngrp'
               }
             ]
           }

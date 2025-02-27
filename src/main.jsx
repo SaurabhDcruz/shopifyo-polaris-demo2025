@@ -9,9 +9,9 @@ import App from './App.jsx'
 import Home from './pages/Home/Home.jsx'
 import LayoutStructure from './components/layout/LayoutStructure.jsx'
 import Actions from './pages/Actions/Actions.jsx'
-// import Dashboard from './Dashboard.jsx'
-// import RecentActivity from './RecentActivity.jsx'
-// import Project from './Project.jsx'
+import PolarisButtons from './pages/PolarisButtons/PolarisButtons.jsx'
+import ButtonGroups from './pages/PolarisButtons/ButtonGroups.jsx'
+
 
 const root = document.getElementById('root')
 
@@ -22,7 +22,8 @@ ReactDOM.createRoot(root).render(
         <Route path='/' element={<LayoutStructure />} >
           <Route index path="/home" element={<Home />}/>
           <Route path='/action'  element={<Actions />} />
-          {/* <Route path="project/:id" element={<Project />} /> */}
+          <Route path='/button'  element={<PolarisButtons />} />
+          <Route path='/btngrp'  element={<ButtonGroups />} />
         </Route> 
       </Routes>
     </BrowserRouter>
