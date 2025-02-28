@@ -1,46 +1,47 @@
 import { LegacyCard, Tabs, Text } from '@shopify/polaris'
 import React, { useCallback, useState } from 'react'
-import ButtonGroupDefaultExample from './ButtonComponents/ButtonGroup/ButtonGroupDefaultExample'
-import ButtonGroupSegmented from './ButtonComponents/ButtonGroup/ButtonGroupSegmented'
-import ButtonGroupPressed from './ButtonComponents/ButtonGroup/ButtonGroupPressed'
+import DefaultFormLayout from './FormLayoutComponents/DefaultFormLayout'
+import FieldGroup from './FormLayoutComponents/FieldGroup'
+import CondensedFieldGroup from './FormLayoutComponents/CondensedFieldGroup'
 
-const ButtonGroups = () => {
+const FormLayout = () => {
   const [selected, setSelected] = useState(0)
 
   const handleTabChange = useCallback(
     selectedTabIndex => setSelected(selectedTabIndex),
     []
   )
-
   const tabs = [
     {
       id: '0',
       content: 'Default',
       panelID: '0',
-      children: <ButtonGroupDefaultExample />
+      children: <DefaultFormLayout />
     },
     {
       id: '1',
-      content: 'With segmented buttons',
+      content: 'Field group',
       panelID: '1',
-      children: <ButtonGroupSegmented />
+      children: <FieldGroup />
     },
     {
       id: '2',
-      content: 'Pressed with segmented buttons',
+      content: 'Condensed field group',
       panelID: '2',
-      children: <ButtonGroupPressed />
-    },
+      children: <CondensedFieldGroup />
+    }
   ]
+
   return (
     <>
       <div style={{ paddingBottom: '10px' }}>
         <Text variant='headingXl' as='h2'>
-          Button group
+          Form layout
         </Text>
         <Text tone='subdued' variant='bodyLg' as='p'>
-          Button group displays multiple related actions stacked or in a
-          horizontal row to help with arrangement and spacing.
+          Use form layout to arrange fields within a form using standard
+          spacing. By default it stacks fields vertically but also supports
+          horizontal groups of fields.
         </Text>
       </div>
 
@@ -53,4 +54,4 @@ const ButtonGroups = () => {
   )
 }
 
-export default ButtonGroups
+export default FormLayout

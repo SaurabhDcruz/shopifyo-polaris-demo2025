@@ -18,12 +18,10 @@ function LayoutStructure () {
     'button',
     'btngrp',
     'pageAction',
-    'dynamic-pricing',
-    'building-blocks',
-    'shopify-discount-codes',
-    'checkout-options',
-    'assets',
-    'integrations'
+    'LayoutAndStructures',
+    'card',
+    'FormLayout',
+    'grid'
   ]
 
   const location = useLocation()
@@ -92,23 +90,34 @@ function LayoutStructure () {
             ]
           },
           {
-            url: '#',
-            excludePaths: ['#'],
-            label: 'Marketing',
+            url: '/',
+            label: 'Layout And Structure',
             icon: TargetIcon,
-            badge: '15',
+            badge: '14',
+            onClick: () => handleNavItemClick('LayoutAndStructures', 'LayoutAndStructures'),
+            selected: activeSettingsPage === 'LayoutAndStructures',
+
             subNavigationItems: [
               {
-                url: '#',
-                excludePaths: ['#'],
+                url: '/',
                 disabled: false,
-                label: 'Reports'
+                matches: activeSettingsPage === 'card',
+                label: 'Card',
+                onClick: () => handleNavItemClick('card', 'card')
               },
               {
-                url: '#',
-                excludePaths: ['#'],
+                url: '/',
                 disabled: false,
-                label: 'Live view'
+                matches: activeSettingsPage === 'FormLayout',
+                label: 'Form Layout',
+                onClick: () => handleNavItemClick('FormLayout', 'FormLayout')
+              },
+              {
+                url: '/',
+                disabled: false,
+                matches: activeSettingsPage === 'grid',
+                label: 'Grid',
+                onClick: () => handleNavItemClick('grid', 'grid')
               }
             ]
           },
@@ -127,7 +136,7 @@ function LayoutStructure () {
               {
                 url: '#',
                 disabled: false,
-                label: 'btngrp'
+                label: 'Testing'
               }
             ]
           }

@@ -1,46 +1,53 @@
 import { LegacyCard, Tabs, Text } from '@shopify/polaris'
 import React, { useCallback, useState } from 'react'
-import ButtonGroupDefaultExample from './ButtonComponents/ButtonGroup/ButtonGroupDefaultExample'
-import ButtonGroupSegmented from './ButtonComponents/ButtonGroup/ButtonGroupSegmented'
-import ButtonGroupPressed from './ButtonComponents/ButtonGroup/ButtonGroupPressed'
+import TwoColumnsGrid from './GridComponents/TwoColumnsGrid'
+import TwoThirdAndOneThirdGrid from './GridComponents/TwoThirdAndOneThirdGrid'
+import ThreeOneThirdColumnGrid from './GridComponents/ThreeOneThirdColumnGrid'
+import CustomLayoutGrid from './GridComponents/CustomLayoutGrid'
 
-const ButtonGroups = () => {
+const Grid = () => {
   const [selected, setSelected] = useState(0)
 
   const handleTabChange = useCallback(
     selectedTabIndex => setSelected(selectedTabIndex),
     []
   )
-
   const tabs = [
     {
       id: '0',
-      content: 'Default',
+      content: 'Two column',
       panelID: '0',
-      children: <ButtonGroupDefaultExample />
+      children: <TwoColumnsGrid />
     },
     {
       id: '1',
-      content: 'With segmented buttons',
+      content: 'Two-thirds and one-third column',
       panelID: '1',
-      children: <ButtonGroupSegmented />
+      children: <TwoThirdAndOneThirdGrid/>
     },
     {
       id: '2',
-      content: 'Pressed with segmented buttons',
+      content: 'Three one-third column',
       panelID: '2',
-      children: <ButtonGroupPressed />
+      children: <ThreeOneThirdColumnGrid />
     },
+    {
+      id: '3',
+      content: 'Custom layout',
+      panelID: '3',
+      children: <CustomLayoutGrid />
+    }
   ]
+
   return (
     <>
       <div style={{ paddingBottom: '10px' }}>
         <Text variant='headingXl' as='h2'>
-          Button group
+          Grid
         </Text>
         <Text tone='subdued' variant='bodyLg' as='p'>
-          Button group displays multiple related actions stacked or in a
-          horizontal row to help with arrangement and spacing.
+          Use to create a two column layout that wraps at a breakpoint and
+          aligns to a twelve column grid.
         </Text>
       </div>
 
@@ -53,4 +60,4 @@ const ButtonGroups = () => {
   )
 }
 
-export default ButtonGroups
+export default Grid
