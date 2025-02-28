@@ -17,6 +17,7 @@ function LayoutStructure () {
     'action',
     'button',
     'btngrp',
+    'pageAction',
     'dynamic-pricing',
     'building-blocks',
     'shopify-discount-codes',
@@ -60,26 +61,33 @@ function LayoutStructure () {
             selected: activeSettingsPage === 'home'
           },
           {
-            url:'/',
+            url: '/',
             label: 'Actions',
             icon: OrderIcon,
             onClick: () => handleNavItemClick('action', 'action'),
-            badge: '15',
+            badge: '3',
             selected: activeSettingsPage === 'action',
             subNavigationItems: [
               {
                 url: '/',
                 disabled: false,
-                matches:activeSettingsPage === 'button',
+                matches: activeSettingsPage === 'button',
                 label: 'Button',
-                onClick: () => handleNavItemClick('button', 'button'),
+                onClick: () => handleNavItemClick('button', 'button')
               },
               {
                 url: '/',
                 disabled: false,
-                matches:activeSettingsPage === 'btngrp',
+                matches: activeSettingsPage === 'btngrp',
                 label: 'Button Groups',
-                onClick: () => handleNavItemClick('btngrp', 'btngrp'),
+                onClick: () => handleNavItemClick('btngrp', 'btngrp')
+              },
+              {
+                url: '/',
+                disabled: false,
+                matches: activeSettingsPage === 'pageAction',
+                label: 'Page Action',
+                onClick: () => handleNavItemClick('pageAction', 'pageAction')
               }
             ]
           },
@@ -143,7 +151,9 @@ function LayoutStructure () {
       onNavigationDismiss={toggleIsNavigationOpen}
       logo={logo}
     >
-      <Outlet />
+      <div style={{ padding: '10px' }}>
+        <Outlet />
+      </div>
     </Frame>
   )
 }

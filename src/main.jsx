@@ -11,6 +11,7 @@ import LayoutStructure from './components/layout/LayoutStructure.jsx'
 import Actions from './pages/Actions/Actions.jsx'
 import PolarisButtons from './pages/PolarisButtons/PolarisButtons.jsx'
 import ButtonGroups from './pages/PolarisButtons/ButtonGroups.jsx'
+import PageAction from './pages/PolarisButtons/PageAction.jsx'
 
 
 const root = document.getElementById('root')
@@ -24,6 +25,7 @@ ReactDOM.createRoot(root).render(
           <Route path='/action'  element={<Actions />} />
           <Route path='/button'  element={<PolarisButtons />} />
           <Route path='/btngrp'  element={<ButtonGroups />} />
+          <Route path='/PageAction'  element={<PageAction />} />
         </Route> 
       </Routes>
     </BrowserRouter>

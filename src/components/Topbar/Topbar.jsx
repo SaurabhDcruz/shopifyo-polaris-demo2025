@@ -38,9 +38,9 @@ export default function Topbar ({ showNavigationToggle, onNavigationToggle }) {
           items: [{ content: 'Community forums' }]
         }
       ]}
-      name='Dharma'
-      detail='Jaded Pixel'
-      initials='D'
+      name='Saurabh Dcruz'
+      detail='Unicode Systems'
+      initials='S'
       open={isUserMenuOpen}
       onToggle={toggleIsUserMenuOpen}
     />
